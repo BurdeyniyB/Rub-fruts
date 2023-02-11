@@ -26,7 +26,6 @@ public class RubRotation : MonoBehaviour
         if(TrueRotation)
         {
           rotation += Time.deltaTime * speed;
-          //Knife.transform.Rotate(0, 100f, -rotation, Space.Self);
           Knife.transform.eulerAngles = new Vector3(0f, 90f, -rotation);
           if(rotation >= maxRotation)
           {

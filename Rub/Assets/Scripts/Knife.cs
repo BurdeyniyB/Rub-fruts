@@ -45,10 +45,7 @@ public class Knife : MonoBehaviour
 
     void Start()
     {
-        //Init mesh and triangles
-        //_meshParent.transform.position = Vector3.zero;
         _mesh = new Mesh();
-        //_meshParent.GetComponent<MeshFilter>().mesh = _mesh;
 
 
         _vertices = new Vector3[_trailFrameLength * NUM_VERTICES];
@@ -158,7 +155,6 @@ public class Knife : MonoBehaviour
         Vector3 side2 = _triggerExitTipPosition - _triggerEnterBasePosition;
 
         //Get the point perpendicular to the triangle above which is the normal
-        //https://docs.unity3d.com/Manual/ComputingNormalPerpendicularVector.html
         Vector3 normal = Vector3.Cross(side1, side2).normalized;
 
         //Transform the normal so that it is aligned with the object we are slicing's transform.
@@ -187,13 +183,6 @@ public class Knife : MonoBehaviour
         }
         Destroy(other.gameObject);
 
-//        Rigidbody rigidbody = slices[1].GetComponent<Rigidbody>();
         Vector3 newNormal = transformedNormal + Vector3.up * _forceAppliedToCut;
-        //rigidbody.AddForce(newNormal, ForceMode.Impulse);
-        //slices[0].AddComponent<moveScript>();
-        //slices[1].AddComponent<moveScript>();
     }
-
-
-
 }
