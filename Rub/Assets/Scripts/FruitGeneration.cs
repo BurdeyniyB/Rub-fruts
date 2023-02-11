@@ -30,12 +30,12 @@ public class FruitGeneration : MonoBehaviour
           NewRub();
        }
 
-       if(SpawnObj != null && SpawnObj.tag == "banana" && SpawnObj.transform.position.x <= -1.3f)
+       if(SpawnObj != null && SpawnObj.tag == "banana" && SpawnObj.transform.position.x <= -3.5f)
        {
           NewRub();
        }
 
-       if(SpawnObj != null && SpawnObj.tag == "melon" && SpawnObj.transform.position.x <= -1.9f)
+       if(SpawnObj != null && SpawnObj.tag == "melon" && SpawnObj.transform.position.x <= -3f)
        {
           NewRub();
        }

@@ -11,6 +11,7 @@ public class Remainder : MonoBehaviour
     [SerializeField] private Material[] mainMaterial;
     private GameObject ob;
     int num;
+    int randomRub;
 
 	void Awake () {
         if (instance == null)
@@ -19,11 +20,16 @@ public class Remainder : MonoBehaviour
 
     IEnumerator CreateRemainder()
     {
+      randomRub = Random.Range(1,5);
+      for(int i = 0; i < randomRub; i++)
+      {
         ob = Instantiate(SpawnObjPrefab, transformRemainder);
-        ob.transform.localScale = new Vector3(Random.Range(0.1f, 0.25f), Random.Range(0.3f, 0.5f), Random.Range(0.1f, 0.25f));
+        ob.transform.position += new Vector3(Random.Range(-0.6f, 0.6f), Random.Range(-0.6f, 0.6f), Random.Range(-0.6f, 0.6f));
+        ob.transform.localScale = new Vector3(Random.Range(0.03f, 0.05f), Random.Range(0.6f, 0.8f), Random.Range(0.1f, 0.15f));
         ob.GetComponent<Renderer>().material = mainMaterial[num];
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
+       }
     }
 
     public void GetNum(int random)

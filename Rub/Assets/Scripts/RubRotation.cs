@@ -7,13 +7,18 @@ public class RubRotation : MonoBehaviour
     public static RubRotation instance;
     [SerializeField] private GameObject Knife;
 
-    public float rotation;
+    public float start_rotation;
     public float speed;
     public bool TrueRotation;
+    public float maxRotation;
+
+    private float rotation;
 
 	void Awake () {
         if (instance == null)
             instance = this;
+        rotation = start_rotation;
+        Knife.transform.eulerAngles = new Vector3(0f, 90f, -rotation);
 	}
 
     void Update()
@@ -22,18 +27,20 @@ public class RubRotation : MonoBehaviour
         {
           rotation += Time.deltaTime * speed;
           //Knife.transform.Rotate(0, 100f, -rotation, Space.Self);
-          Knife.transform.eulerAngles = new Vector3(0, 90f, -rotation);
-          if(rotation >= 360f)
+          Knife.transform.eulerAngles = new Vector3(0f, 90f, -rotation);
+          if(rotation >= maxRotation)
           {
-//            TrueRotation = false;
-            rotation = 280f;
-            Knife.transform.eulerAngles = new Vector3(0, 90f, -rotation);
+            TrueRotation = false;
+            rotation = start_rotation;   
+            Knife.transform.eulerAngles = new Vector3(0f, 90f, -rotation);
           }
         }
     }
 
     public void IsTrueRotation()
     {
+       rotation = start_rotation;
+       Knife.transform.eulerAngles = new Vector3(0f, 90f, -rotation);
        TrueRotation = true;
     }
 }

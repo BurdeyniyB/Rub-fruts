@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5207615601334846182}
   - component: {fileID: 3859896063818220264}
   - component: {fileID: 5338298978971883785}
-  - component: {fileID: 3225673337370757179}
   - component: {fileID: 2286871649479231190}
   - component: {fileID: 9205813122261716698}
+  - component: {fileID: 3552399685455724473}
   m_Layer: 0
   m_Name: Banana
   m_TagString: banana
@@ -29,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577218388146350853}
   m_LocalRotation: {x: -0.000000040978193, y: 0.000000097203156, z: -0.7071103, w: 0.7071033}
-  m_LocalPosition: {x: 0.34, y: -0.35, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalPosition: {x: 1.7, y: -0.35, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &3859896063818220264
 MeshFilter:
@@ -86,23 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3225673337370757179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4577218388146350853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74b9b79e7d79c048a3f5f2f0e37119d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isSolid: 1
-  _reverseWindTriangles: 1
-  _useGravity: 0
-  _shareVertices: 0
-  _smoothVertices: 0
 --- !u!64 &2286871649479231190
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -133,3 +116,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &3552399685455724473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577218388146350853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617dc9de9891e9e44ae2de860711a1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSolid: 1
+  _reverseWindTriangles: 0
+  _useGravity: 0
+  _shareVertices: 0
+  _smoothVertices: 0

@@ -37,6 +37,7 @@ public class swipe : MonoBehaviour
     void Update() {
        if(gamePlay)
        {
+        Lerp += Time.deltaTime * speed;
         if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
           if((PosY + Input.GetTouch(0).deltaPosition.y /100) < PosUp.transform.position.y && (PosY + Input.GetTouch(0).deltaPosition.y /100) > PosDown.transform.position.y)
@@ -45,21 +46,25 @@ public class swipe : MonoBehaviour
             {
               down = true;
               up = false;
+              Lerp = 0;
+              RubRotation.instance.IsTrueRotation();
               Remainder.instance.StartCorout();
               CameraShaker.Invoke();
+              PosX -= 0.5f;
             }
             else if(PosY < PosY + Input.GetTouch(0).deltaPosition.y /100 && up == false)
             {
               up = true;
               down = false;
+              Lerp = 0;
+              RubRotation.instance.IsTrueRotation();
               Remainder.instance.StartCorout();
+              PosX -= 0.5f;
             }
             PosY = PosY + Input.GetTouch(0).deltaPosition.y /100;
           }
 
-
-          Player.transform.position = new Vector3(PosX, PosY, PosZ);
-          PosX -= 0.03f;
+          Player.transform.position = Vector3.Lerp( Player.transform.position, new Vector3(PosX, PosY, PosZ), Lerp);
         }
        }
     }

@@ -23,7 +23,7 @@ namespace Assets.Scripts
 //            {
 //                throw new NotSupportedException("Cannot slice non sliceable object, add the sliceable script to the object or inherit from sliceable to support slicing");
 //            }
-            
+
             //Create left and right slice of hollow object
               SlicesMetadata slicesMeta = new SlicesMetadata(plane, mesh, sliceable.IsSolid, sliceable.ReverseWireTriangles, sliceable.ShareVertices, sliceable.SmoothVertices);
 
@@ -55,13 +55,13 @@ namespace Assets.Scripts
 
             SetupCollidersAndRigidBodys(ref positiveObject, positiveSideMeshData, sliceable.UseGravity);
 //            SetupCollidersAndRigidBodys(ref negativeObject, negativeSideMeshData, sliceable.UseGravity);
-            
+
             Debug.Log("transform pos " + positiveObject.transform.position.x);
 //            Debug.Log("transform neg " + negativeObject.transform.position.x);
 
             return new GameObject[] {positiveObject};
             //positiveObject, negativeObject
-        }        
+        }
 
         /// <summary>
         /// Creates the default mesh game object.
@@ -100,7 +100,7 @@ namespace Assets.Scripts
         /// <param name="gameObject"></param>
         /// <param name="mesh"></param>
         private static void SetupCollidersAndRigidBodys(ref GameObject gameObject, Mesh mesh, bool useGravity)
-        {                     
+        {
             MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
             meshCollider.sharedMesh = mesh;
             meshCollider.convex = true;

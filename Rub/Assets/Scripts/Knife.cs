@@ -181,7 +181,10 @@ public class Knife : MonoBehaviour
             plane = plane.flipped;
         }
 
-        GameObject[] slices = Slicer.Slice(plane, other.gameObject);
+        if(other.gameObject.GetComponent<Sliceable>() != null)
+        {
+          GameObject[] slices = Slicer.Slice(plane, other.gameObject);
+        }
         Destroy(other.gameObject);
 
 //        Rigidbody rigidbody = slices[1].GetComponent<Rigidbody>();

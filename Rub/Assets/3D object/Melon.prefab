@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6202813834258000511}
   - component: {fileID: 6512154762017918349}
   - component: {fileID: 8016345194757257895}
-  - component: {fileID: 381191883727351475}
+  - component: {fileID: 4860907387480127932}
   m_Layer: 0
   m_Name: Melon
   m_TagString: melon
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6166938650781121194}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.15, y: 0, z: -0.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.3, y: 0, z: -0.25}
+  m_LocalScale: {x: 1.6, y: 1.2, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &381191883727351475
+--- !u!114 &4860907387480127932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +125,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6166938650781121194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74b9b79e7d79c048a3f5f2f0e37119d, type: 3}
+  m_Script: {fileID: 11500000, guid: 617dc9de9891e9e44ae2de860711a1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isSolid: 1
-  _reverseWindTriangles: 1
+  _reverseWindTriangles: 0
   _useGravity: 0
   _shareVertices: 0
   _smoothVertices: 0
